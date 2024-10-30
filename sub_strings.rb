@@ -1,5 +1,3 @@
-
-
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
 def substrings (input, dictionary)
@@ -16,10 +14,10 @@ def substrings (input, dictionary)
       end
     end
   end
-  p matching_hash
+  matching_hash
 end
 
-substrings("Howdy partner, sit down! How's it going?", dictionary)
+p substrings("Howdy partner, sit down! How's it going?", dictionary)
 
 #substrings("below", dictionary)
 #=> { "below" => 1, "low" => 1 }
