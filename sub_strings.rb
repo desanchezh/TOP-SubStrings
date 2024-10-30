@@ -7,6 +7,7 @@ def substrings (input, dictionary)
   input_array = cleanInput(input).split(' ') 
   #turns out this could be accomplished without splitting into arrays 
   #and looping on strings with .each_char |letter| and comparing with string.include?(letter)
+  #Or even simpler... use input.scan(dictionary word)
   matching_hash = Hash.new(0)
   input_array.each do |input_word|
     dictionary.each do |dictionary_word|
