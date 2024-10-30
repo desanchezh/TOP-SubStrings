@@ -2,9 +2,26 @@
 
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
-def substring (string, dictionary)
-  string.split
+def substrings (input, dictionary)
+  def cleanInput (string)
+    string.gsub(/[^a-zA-Z]/, ' ').downcase
+  end
+  input_array = cleanInput(input).split(' ')
+  matching_hash = Hash.new(0)
+  input_array.each do |input_word|
+    dictionary.each do |word|
+      result = word.split('') - cleanInput(input_word).split('')
+      if result.empty?
+        matching_hash[word] += 1
+      end
+    end
+  end
+  p matching_hash
 end
 
-substrings("below", dictionary)
+substrings("Howdy partner, sit down! How's it going?", dictionary)
+
+#substrings("below", dictionary)
 #=> { "below" => 1, "low" => 1 }
+#> substrings("Howdy partner, sit down! How's it going?", dictionary)
+#=> { "down" => 1, "go" => 1, "going" => 1, "how" => 2, "howdy" => 1, "it" => 2, "i" => 3, "own" => 1, "part" => 1, "partner" => 1, "sit" => 1 }
