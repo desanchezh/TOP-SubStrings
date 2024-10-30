@@ -10,7 +10,7 @@ def substrings (input, dictionary)
   matching_hash = Hash.new(0)
   input_array.each do |input_word|
     dictionary.each do |dictionary_word|
-      result = dictionary_word.split('') - cleanInput(input_word).split('')
+      result = dictionary_word.split('') - input_word.split('')
       if result.empty?
         matching_hash[dictionary_word] += 1
       end
